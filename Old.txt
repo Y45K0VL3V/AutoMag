@@ -1,0 +1,126 @@
+unit AutoMag;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Help, CarCreate, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.ExtCtrls, sSkinManager, Vcl.Mask, sMaskEdit,
+  sCustomComboEdit, sComboBox, sComboBoxes, sSkinProvider, Vcl.Grids, Data.DB,
+  Vcl.DBGrids, acDBGrid, CarPanel, sLabel, System.ImageList, Vcl.ImgList,
+  acAlphaImageList, sButton, sBitBtn;
+
+type
+  TFormMain = class(TForm)
+    MainMenu1: TMainMenu;
+    trlHelp: TMenuItem;
+    PanelControl: TPanel;
+    btnCarCreate: TButton;
+    btnCartEnter: TButton;
+    btnFavEnter: TButton;
+    SkinChange: TsSkinManager;
+    sSkinProvider1: TsSkinProvider;
+    lstImgCartnFav: TsAlphaImageList;
+    procedure trlHelpClick(Sender: TObject);
+    procedure btnCarCreateClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormMouseWheelDown(Sender: TObject; Shift: TShiftState;
+      MousePos: TPoint; var Handled: Boolean);
+    procedure FormMouseWheelUp(Sender: TObject; Shift: TShiftState;
+      MousePos: TPoint; var Handled: Boolean);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMain: TFormMain;
+  CarInfoPanel: array of TCarPanel;
+  CurrPanel: Integer = 0;
+  FileCarList: TCarList;
+  CarsAmount: Integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormMain.btnCarCreateClick(Sender: TObject);
+Var
+  i: Integer;
+begin
+  CloseFile(FileCarList);
+  FormMain.Hide;
+  for i := 0 to CurrPanel - 1 do
+    CarInfoPanel[i].Destroy;
+  CurrPanel := 0;
+  Application.CreateForm(TFormCarCreate, FormCarCreate);
+  FormCarCreate.Show;
+  FormCarCreate.ActiveControl := nil;
+end;
+
+procedure TFormMain.FormCreate(Sender: TObject);
+begin
+  FormMain.Show;
+end;
+
+procedure TFormMain.FormMouseWheelDown(Sender: TObject; Shift: TShiftState;
+  MousePos: TPoint; var Handled: Boolean);
+begin
+  with FormMain.VertScrollBar do
+    Position := Position + Increment;
+end;
+
+procedure TFormMain.FormMouseWheelUp(Sender: TObject; Shift: TShiftState;
+  MousePos: TPoint; var Handled: Boolean);
+begin
+  with FormMain.VertScrollBar do
+    Position := Position - Increment;
+end;
+
+procedure ShowCars();
+Var
+  CurrCar: TCar;
+Begin
+  while not EOF(FileCarList) do
+  Begin
+    Read(FileCarList, CurrCar);
+    CarInfoPanel[CurrPanel] := TCarPanel.Create(FormMain);
+    CarInfoPanel[CurrPanel].BevelOuter := bvLowered;
+    CarInfoPanel[CurrPanel].SetAllComps();
+
+    CarInfoPanel[CurrPanel].imgCarPhoto.Picture.LoadFromFile(CurrCar.Images[1]);
+
+    with CarInfoPanel[CurrPanel] do
+    Begin
+      Parent := FormMain;
+      Left := -1;
+      Top := 100 + CurrPanel * 315;
+      Height := 276;
+      Width := 1124;
+    End;
+    Inc(CurrPanel);
+  End;
+End;
+
+procedure TFormMain.FormShow(Sender: TObject);
+begin
+  AssignFile(FileCarList, 'C:\ОАиП\Отчёты 2 сем\Курсач тру\CarPh\CarList');
+  if FileExists('C:\ОАиП\Отчёты 2 сем\Курсач тру\CarPh\CarList') then
+    Reset(FileCarList)
+  else
+    Rewrite(FileCarList);
+  CarsAmount := FileSize(FileCarList);
+  SetLength(CarInfoPanel, CarsAmount);
+  FormMain.VertScrollBar.Range := 315 * CarsAmount + 100;
+  ShowCars();
+end;
+
+procedure TFormMain.trlHelpClick(Sender: TObject);
+begin
+  FormHelp.Position := poScreenCenter;
+  FormHelp.Show;
+end;
+
+end.

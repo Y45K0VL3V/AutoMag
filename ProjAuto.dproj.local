@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.244,C:\ОАиП\Отчёты 2 сем\Курсач тру\Win32\Debug\CarPanel.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.038,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Win32\Debug\CarPanel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.607,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Win32\Debug\CarPanel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.267,=C:\ОАиП\Отчёты 2 сем\Курсач тру\CarCreate.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.122,C:\ОАиП\Отчёты 2 сем\Курсач тру\Cart.dfm=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.972,C:\ОАиП\Отчёты 2 сем\Курсач тру\CarCreate.dfm=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,C:\Users\yakov\OneDrive\เอกสาร\Embarcadero\Studio\Projects\Unit2.dfm=C:\ОАиП\Отчёты 2 сем\Курсач тру\AutoMag.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,C:\Users\yakov\OneDrive\เอกสาร\Embarcadero\Studio\Projects\Unit2.pas=C:\ОАиП\Отчёты 2 сем\Курсач тру\AutoMag.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.230,C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.dfm=C:\ОАиП\Отчёты 2 сем\Курсач тру\Favorites.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.378,C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.dfm=C:\ОАиП\Отчёты 2 сем\Курсач тру\Help.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.248,=C:\Users\yakov\OneDrive\เอกสาร\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.085,=C:\Users\yakov\OneDrive\เอกสาร\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.890,=C:\Users\yakov\OneDrive\เอกสาร\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.543,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.230,C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas=C:\ОАиП\Отчёты 2 сем\Курсач тру\Favorites.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.148,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.491,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.888,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.334,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.378,C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas=C:\ОАиП\Отчёты 2 сем\Курсач тру\Help.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.988,=C:\ОАиП\Отчёты 2 сем\Курсач тру\Help.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.329,C:\ОАиП\Отчёты 2 сем\Курсач тру\Help.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.972,C:\ОАиП\Отчёты 2 сем\Курсач тру\CarCreate.pas=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.099,C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas=C:\ОАиП\Отчёты 2 сем\Курсач тру\Win32\Debug\Magazine.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.008,C:\Users\yakov\OneDrive\เอกสาร\Embarcadero\Studio\Projects\Project6.dproj=C:\ОАиП\Отчёты 2 сем\Курсач тру\ProjAuto.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.122,C:\ОАиП\Отчёты 2 сем\Курсач тру\Cart.pas=C:\ОАиП\Отчёты 2 сем\Курсач тру\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,13 @@
+Welcome to the best electronic auto magazine ever
+Here you can: 
+- create cars
+- edit cars 
+- delete cars
+- sort cars
+- filter cars
+- add car to favorites and cart
+To see sort and filters - move your mouse on gray panel on main form
+Like my interface :)
+-------------------------
+Created by Yakovlev Vadim 
+BSUIR student 051004

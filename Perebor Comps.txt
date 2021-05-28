@@ -1,0 +1,41 @@
+function TFormCarCreate.IsAllEntered(): Boolean;
+
+  procedure IsLineEntered(cmpLine: TObject; slblLine: TsLabel);
+  Begin
+    if Pos('edt',(cmpLine as TComponent).Name) = 1 then
+    Begin
+      if String((cmpLine as TEdit).Text).IsEmpty then
+        slblLine.UseSkinColor := false
+      else
+        slblLine.UseSkinColor := true;
+    End
+    Else
+      if (cmpLine as TsComboBox).ItemIndex = -1 then
+        slblLine.UseSkinColor := false
+      else
+        slblLine.UseSkinColor := true;
+  End;
+
+Var
+  CompInd, CompIndslbl: Integer;
+  EntName, LabelName: string;
+Begin
+  Result := true;
+  for CompInd := 0 to FormCarCreate.ComponentCount - 1 do
+    if (FormCarCreate.Components[CompInd] is TEdit) or (FormCarCreate.Components[CompInd] is TsComboBox) then
+      for CompIndslbl := 0 to FormCarCreate.ComponentCount - 1 do
+        if FormCarCreate.Components[CompIndslbl] is TsLabel then
+        Begin
+          EntName := FormCarCreate.Components[CompInd].Name;
+          LabelName := FormCarCreate.Components[CompIndslbl].Name;
+          if Pos(Copy(EntName, 4, Length(EntName)), LabelName) <> 0 then
+            IsLineEntered(FormCarCreate.Components[CompInd], (FormCarCreate.Components[CompIndslbl] as TsLabel));
+        End;
+  for CompIndslbl := 0 to FormCarCreate.ComponentCount - 1 do
+    if FormCarCreate.Components[CompIndslbl] is TsLabel then
+      if (FormCarCreate.Components[CompIndslbl] as TsLabel).UseSkinColor = false then
+      Begin
+        Result := false;
+        exit;
+      End;
+End;
